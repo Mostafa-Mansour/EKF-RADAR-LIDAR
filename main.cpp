@@ -69,14 +69,14 @@ int main() {
     }
     fileIn.close();
     Tracking track;
-    std::cout<<"Test"<<std::endl;
+    //std::cout<<"Test"<<std::endl;
     for(int i=0;i<measurementList.size();i++){
         track.ProcessMeasurement(measurementList[i]);
         //estimations.push_back()
 
     }
-    std::cout<<"Estimations are "<<measurementList.size()<<std::endl;
-    std::cout<<"Ground truth are "<<ground_truthList.size()<<std::endl;
+    //std::cout<<"Estimations are "<<measurementList.size()<<std::endl;
+    //std::cout<<"Ground truth is "<<ground_truthList.size()<<std::endl;
     track.calculateRMSE(track.estimations,ground_truthList);
     return 0;
 }

@@ -1,6 +1,6 @@
 # Code organization
 ---
-[image1]: ./images/data.png "data"
+[image1]: ./data.png "data"
 The data file can be checked [here](obj_pose-laser-radar-synthetic-input.txt).
 
 * ![alt text][image1]

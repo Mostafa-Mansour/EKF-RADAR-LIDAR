@@ -9,7 +9,7 @@ int main() {
     std::vector<VectorXd> ground_truthList;
     std::vector<VectorXd> estimations;
     MeasurementPackage measurement;
-    std::string filePath="/home/mostafa/Desktop/carnd-term2/c++/EKF_RADAR_LIDAR/obj_pose-laser-radar-synthetic-input.txt";
+    std::string filePath="/home/mostafa/Desktop/Udacity-carnd/carnd-term2/c++/check/EKF-RADAR-LIDAR/obj_pose-laser-radar-synthetic-input.txt";
     std::ifstream fileIn(filePath,std::ios::app);
     std::string line;
     std::string sensor;
@@ -20,18 +20,22 @@ int main() {
     VectorXd ground_truth(4);
 
     if(fileIn.is_open()){
+        std::cout<<"file is opened"<<std::endl;
         std::istringstream iss;
         while(std::getline(fileIn,line)){
             iss.str(line);
             iss>>sensor;
 
             // Check for sensor type
+            //std::cout<<"Sensor compare";
             if(sensor.compare("L")==0){
+
                 measurement.sensor_type_=MeasurementPackage::LASER;
                 measurement.raw_measurements_=VectorXd(2);
                 iss>>x;
                 iss>>y;
                 measurement.raw_measurements_<<x,y;
+                std::cout<<measurement.raw_measurements_<<std::endl;
                 iss>>timeStamp;
                 measurement.timeStamp_=timeStamp;
                 iss>>x_true;

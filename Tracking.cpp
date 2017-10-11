@@ -5,7 +5,6 @@
 #include <iostream>
 #include "Tracking.h"
 #include <math.h>
-const float pi=std::acos(-1);
 Tracking::Tracking() {
     is_initialized_=false;
     previous_timestamp_=0;
@@ -40,14 +39,15 @@ void Tracking::ProcessMeasurement(const MeasurementPackage &measurement) {
 
             //check the bearing angel and adjust it between -pi and pi
             double angel=measurement.raw_measurements_[1];
-            if(angel>pi ){
+            /*if(angel>pi ){
                 float factor=std::ceil(angel/pi);
                 angel-=2*pi*factor;
-            }
+            }const float pi=std::acos(-1);
+
             else if(angel<pi ){
                 float factor=std::floor(angel/pi);
                 angel-=2*pi*factor;
-            }
+            }*/
 
             // check complete
             ekf_.X_<<measurement.raw_measurements_[0]*std::cos(angel),
@@ -56,6 +56,8 @@ void Tracking::ProcessMeasurement(const MeasurementPackage &measurement) {
         }
 
         estimations.push_back(ekf_.X_);
+        std::cout<<"Initialization"<<std::endl;
+        std::cout<<ekf_.X_<<std::endl;
         previous_timestamp_=measurement.timeStamp_;
         is_initialized_=true;
         return;

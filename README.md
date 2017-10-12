@@ -15,3 +15,6 @@ Building
 ---
 Running
 * ./EKF-RADAR-LIDAR
+
+---
+You can use Clion IDE for building and running.

@@ -9,7 +9,6 @@ Dependences
 ---
 Building
 * Clone the repository and on the root of the repository folder do the next steps,
-* mkdir build
 * cd build
 * cmake ..
 * make

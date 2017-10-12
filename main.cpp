@@ -9,7 +9,7 @@ int main() {
     std::vector<VectorXd> ground_truthList;
     std::vector<VectorXd> estimations;
     MeasurementPackage measurement;
-    std::string filePath="/home/mostafa/Desktop/Udacity-carnd/carnd-term2/c++/check/EKF-RADAR-LIDAR/obj_pose-laser-radar-synthetic-input.txt";
+    std::string filePath="../obj_pose-laser-radar-synthetic-input.txt";
     std::ifstream fileIn(filePath,std::ios::app);
     std::string line;
     std::string sensor;

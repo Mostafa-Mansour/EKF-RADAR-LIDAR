@@ -18,8 +18,6 @@ The data file can be checked [here](obj_pose-laser-radar-synthetic-input.txt).
 
 * I will use the measurement values and timestamp in Kalman filter algorithm. Groundtruth, which represents the actual path the bicycle took, is for calculating root mean squared error.
 
-* Please, make sure to write the full path of the data file in your machine (Line 12, main.cpp). It is important for the code to be compiled and run.
-
 ---
 The project consists of Three main classes:
 * Measurement class

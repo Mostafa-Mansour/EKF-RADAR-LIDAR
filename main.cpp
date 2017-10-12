@@ -9,7 +9,7 @@ int main() {
     std::vector<VectorXd> ground_truthList;
     std::vector<VectorXd> estimations;
     MeasurementPackage measurement;
-    std::string filePath="../obj_pose-laser-radar-synthetic-input.txt";
+    std::string filePath="../data/obj_pose-laser-radar-synthetic-input.txt";
     std::ifstream fileIn(filePath,std::ios::app);
     std::string line;
     std::string sensor;
@@ -20,7 +20,7 @@ int main() {
     VectorXd ground_truth(4);
 
     if(fileIn.is_open()){
-        std::cout<<"file is opened"<<std::endl;
+        //std::cout<<"file is opened"<<std::endl;
         std::istringstream iss;
         while(std::getline(fileIn,line)){
             iss.str(line);
